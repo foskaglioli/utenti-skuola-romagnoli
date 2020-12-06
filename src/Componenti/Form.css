@@ -1,0 +1,28 @@
+.add_utente{
+  display: inline-block;
+  border:2px solid #0000;
+  color: #FFFFFF;
+  font-family: Verdana;
+  font-size: 14px;
+  padding: 10px 40px;
+  background-color: #94BC3E;
+}
+
+
+#div_form_utenti{
+  width: 96.6%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 0px 10px 10px 0px;
+  border-top:2px solid #007dc3;
+  border-right:2px solid #007dc3;
+  border-bottom:2px solid #007dc3;
+}
+
+.form_utenti{
+  padding: 20px 0px 30px 30px;
+}
+
+.campi_form_utenti{
+  padding-right: 20px;
+}

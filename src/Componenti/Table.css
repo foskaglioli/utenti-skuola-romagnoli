@@ -1,0 +1,70 @@
+
+
+#utenti {
+  text-align: center;
+  font-family: "Helvetica", Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 5px 5px 5px #999;
+  border: 2px solid #FEE300;
+  padding: 8px;
+}
+
+.tabella {
+  border: 1px solid #FEE300;
+  padding: 8px;
+}
+
+.pulsanteInterfaccia{
+  cursor: pointer;
+}
+
+.pulsanteCancella{
+  cursor: pointer;
+  display: inline-block;
+ border:2px solid #F75050;
+ color: #070707;
+ border-radius: 3px 3px 3px 3px;
+ -webkit-border-radius: 3px 3px 3px 3px;
+ -moz-border-radius: 3px 3px 3px 3px;
+ font-family: Verdana;
+ width: auto;
+ height: auto;
+ font-size: 16px;
+ padding: 10px 40px;
+ background-color: #0000;
+}
+
+.pulsanteCancella:hover{
+   border:2px solid #F75050;
+   color: #070707;
+   background-color: #FF9E9E;
+}
+
+.pointer{
+  cursor: pointer;
+}
+
+.righe_tabella:nth-child(even){background-color: #f2f2f2;}
+
+.righe_tabella:hover {background-color: #ddd;}
+
+.utenti_th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #007dc3;
+  color: white;
+}
+
+
+#container_table{
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
+  /*
+  position: absolute;
+  top: 320px;*/
+
+}
