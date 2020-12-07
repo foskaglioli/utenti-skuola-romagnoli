@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import Table from './Componenti/Table';
 import Header from './Componenti/Header';
 import Form from './Componenti/Form';
+import Table from './Componenti/Table';
 import { Provider as AlertProvider } from 'react-alert';
 //import AlertTemplate from 'react-alert-template-basic';
 

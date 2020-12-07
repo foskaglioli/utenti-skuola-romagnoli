@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Table.css';
 import { format } from "date-fns";
 import InlineConfirmButton from "react-inline-confirm";
+import TableScrollbar from 'react-table-scrollbar';
 
 export default class Table extends Component {
    constructor(props) {
@@ -91,14 +92,14 @@ export default class Table extends Component {
          const textValues = ["Rimuovi utente", "Confermare?", "Sto cancellando..."];
          let data_nascita_visualizzata = format(new Date(data_nascita),"dd/MM/yyyy");
          let cognome_visualizzato = cognome.length > 38 ? cognome.substring(0, 35)+"..." : cognome;
-         let nome_visualizzato = cognome.length > 38 ? cognome.substring(0, 35)+"..." : cognome;
+         let nome_visualizzato = nome.length > 38 ? nome.substring(0, 35)+"..." : nome;
          return (
             <tr key={email} className="righe_tabella">
                <td alt={cognome} title={cognome} className="tabella">{cognome_visualizzato}</td>
                <td alt={nome} title={nome} className="tabella">{nome_visualizzato}</td>
                <td className="tabella">{data_nascita_visualizzata}</td>
                <td alt={email} title={email} className="tabella">{email}</td>
-               <td className="tabella"><InlineConfirmButton className="btn btn-default pulsanteCancella" textValues={textValues} showTimer onClick={() => this.gestisciRimozione(email)}>
+               <td className="tabella"><InlineConfirmButton className="btn btn-default pulsanteCancella" textValues={textValues} isExecuting={true} showTimer onClick={() => this.gestisciRimozione(email)}>
               	</InlineConfirmButton></td>
             </tr>
          )
@@ -107,12 +108,16 @@ export default class Table extends Component {
    render() {
       return (
          <div id="container_table">
+          <TableScrollbar rows={13} >
             <table id='utenti'>
-               <tbody>
+               <thead>
                   {this.creaHeader()}
+               </thead>
+               <tbody>
                   {this.creaRighe()}
                </tbody>
             </table>
+          </TableScrollbar>
          </div>
       )
    }

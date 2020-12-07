@@ -28,6 +28,7 @@
     "react-hook-form": "^6.12.2",
     "react-inline-confirm": "^3.0.0",
     "react-scripts": "^4.0.1",
+    "react-table-scrollbar": "^0.1.9",
     "web-vitals": "^0.2.4"
   },
   "scripts": {
