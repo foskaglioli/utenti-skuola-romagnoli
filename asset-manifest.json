@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/utenti-skuola-romagnoli/static/css/main.00afca44.chunk.css",
-    "main.js": "/utenti-skuola-romagnoli/static/js/main.548eafe1.chunk.js",
-    "main.js.map": "/utenti-skuola-romagnoli/static/js/main.548eafe1.chunk.js.map",
+    "main.css": "/utenti-skuola-romagnoli/static/css/main.01b8f1e0.chunk.css",
+    "main.js": "/utenti-skuola-romagnoli/static/js/main.a621c439.chunk.js",
+    "main.js.map": "/utenti-skuola-romagnoli/static/js/main.a621c439.chunk.js.map",
     "runtime-main.js": "/utenti-skuola-romagnoli/static/js/runtime-main.83894c6a.js",
     "runtime-main.js.map": "/utenti-skuola-romagnoli/static/js/runtime-main.83894c6a.js.map",
     "static/js/2.2805e2b3.chunk.js": "/utenti-skuola-romagnoli/static/js/2.2805e2b3.chunk.js",
     "static/js/2.2805e2b3.chunk.js.map": "/utenti-skuola-romagnoli/static/js/2.2805e2b3.chunk.js.map",
     "index.html": "/utenti-skuola-romagnoli/index.html",
-    "static/css/main.00afca44.chunk.css.map": "/utenti-skuola-romagnoli/static/css/main.00afca44.chunk.css.map",
+    "static/css/main.01b8f1e0.chunk.css.map": "/utenti-skuola-romagnoli/static/css/main.01b8f1e0.chunk.css.map",
     "static/js/2.2805e2b3.chunk.js.LICENSE.txt": "/utenti-skuola-romagnoli/static/js/2.2805e2b3.chunk.js.LICENSE.txt",
     "static/media/logo_skuola.a799d43e.PNG": "/utenti-skuola-romagnoli/static/media/logo_skuola.a799d43e.PNG"
   },
   "entrypoints": [
     "static/js/runtime-main.83894c6a.js",
     "static/js/2.2805e2b3.chunk.js",
-    "static/css/main.00afca44.chunk.css",
-    "static/js/main.548eafe1.chunk.js"
+    "static/css/main.01b8f1e0.chunk.css",
+    "static/js/main.a621c439.chunk.js"
   ]
 }
