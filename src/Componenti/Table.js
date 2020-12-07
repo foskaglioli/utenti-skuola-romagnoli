@@ -90,12 +90,14 @@ export default class Table extends Component {
          const { cognome, nome, data_nascita, email } = utente;
          const textValues = ["Rimuovi utente", "Confermare?", "Sto cancellando..."];
          let data_nascita_visualizzata = format(new Date(data_nascita),"dd/MM/yyyy");
+         let cognome_visualizzato = cognome.length > 38 ? cognome.substring(0, 35)+"..." : cognome;
+         let nome_visualizzato = cognome.length > 38 ? cognome.substring(0, 35)+"..." : cognome;
          return (
             <tr key={email} className="righe_tabella">
-               <td className="tabella">{cognome}</td>
-               <td className="tabella">{nome}</td>
+               <td alt={cognome} title={cognome} className="tabella">{cognome_visualizzato}</td>
+               <td alt={nome} title={nome} className="tabella">{nome_visualizzato}</td>
                <td className="tabella">{data_nascita_visualizzata}</td>
-               <td className="tabella">{email}</td>
+               <td alt={email} title={email} className="tabella">{email}</td>
                <td className="tabella"><InlineConfirmButton className="btn btn-default pulsanteCancella" textValues={textValues} showTimer onClick={() => this.gestisciRimozione(email)}>
               	</InlineConfirmButton></td>
             </tr>
