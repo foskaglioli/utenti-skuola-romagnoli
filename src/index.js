@@ -5,8 +5,6 @@ import Header from './Componenti/Header';
 import Form from './Componenti/Form';
 import Table from './Componenti/Table';
 import { Provider as AlertProvider } from 'react-alert';
-//import AlertTemplate from 'react-alert-template-basic';
-
 
 const options = {
   position: 'top right',

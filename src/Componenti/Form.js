@@ -32,7 +32,6 @@ export default function Form() {
     let esito = [];
     esito["ok"]=true;
     esito["errore"]="";
-
     //Controllo la lunghezza di tuti i parametri inseriti
     for (const key of Object.keys(obj)) {
       if(typeof(obj[key]) === 'string' && obj[key].length > 255){
@@ -41,7 +40,6 @@ export default function Form() {
         return esito;
       }
     }
-
     //Controllo tutti i campi obbligatori, nel caso in cui il required non dovesse funzionare
     let controlla_campi_obbligatori= checkCampiObl(obj);
     if(!controlla_campi_obbligatori["ok"]){
@@ -49,7 +47,6 @@ export default function Form() {
       esito["errore"]=controlla_campi_obbligatori["errore"];
       return esito;
     }
-
     //Le email devono rispettare la sintassi classica e non devono essere già presenti
     let controlla_mail = checkMail(obj.email);
     if(!controlla_mail["ok"]){
@@ -57,7 +54,6 @@ export default function Form() {
       esito["errore"]=controlla_mail["errore"];
       return esito;
     }
-
     //Le date devono rispettare la sintassi classica e devono essere date di nascita di persone maggiorenni
     let controlla_data_nascita = checkDataNascita(obj.data_nascita);
     if(!controlla_data_nascita["ok"]){
@@ -65,7 +61,6 @@ export default function Form() {
       esito["errore"]=controlla_data_nascita["errore"];
       return esito;
     }
-
     return esito;
   }
 
@@ -90,7 +85,6 @@ export default function Form() {
       esito_campi_obl["errore"]="Il campo 'E-mail' è obbligatorio";
       return esito_campi_obl;
     }
-
     return esito_campi_obl;
   }
 
@@ -98,26 +92,22 @@ export default function Form() {
     let esito_mail = [];
     esito_mail["ok"]=true;
     esito_mail["errore"]="";
-
     if(!email_str){
       esito_mail["ok"]=false;
       esito_mail["errore"]="Il campo email è obbligatorio";
       return esito_mail;
     }
-
     if(!sintassiEmail(email_str)){
       esito_mail["ok"]=false;
       esito_mail["errore"]="Il campo email deve rispettare la sintassi: esempio@mail.com ";
       return esito_mail;
     }
-
     //Controllo che non ci sia un altro utente con quella email
     if(getUserObjectByEmail(email_str)){
      esito_mail["ok"]=false;
      esito_mail["errore"]="Indirizzo email già registrato";
      return esito_mail;
     }
-
     return esito_mail;
   }
 
@@ -154,8 +144,6 @@ export default function Form() {
     let esito_validate = [];
     esito_validate["ok"] = true;
     esito_validate["errore"] = "";
-
-
     let data_ita = data_str.split('/');
     let data_db = data_str.split('-');
     let esito_coerenza = null;
@@ -168,15 +156,11 @@ export default function Form() {
       esito_validate["errore"] = "Data inserita in un formato non valido (es. data corretta: 01/01/2020)";
       return esito_validate;
     }
-
     if(!esito_coerenza["ok"]){
       esito_validate["ok"] = esito_coerenza["ok"];
       esito_validate["errore"] = esito_coerenza["errore"];
     }
-
     return esito_validate;
-
-
   }
 
   const coerenzaData = (giorno,mese,anno) => {

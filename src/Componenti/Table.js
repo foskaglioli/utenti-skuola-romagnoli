@@ -6,7 +6,7 @@ import InlineConfirmButton from "react-inline-confirm";
 export default class Table extends Component {
    constructor(props) {
       super(props);
-      //Popolo l'array_utenti, prendendo dati dal localStorage da utilizzare come come stato iniziale della tabella
+      //Popolo l'array_utenti, prendendo dati dal localStorage da utilizzare come stato iniziale della tabella
       let array_utenti = [];
       Object.keys(localStorage).forEach(function(key){
          var item =JSON.parse(localStorage.getItem(key));
@@ -106,7 +106,6 @@ export default class Table extends Component {
    }
    render() {
       return (
-
          <div id="container_table">
             <table id='utenti'>
                <tbody>
@@ -115,7 +114,6 @@ export default class Table extends Component {
                </tbody>
             </table>
          </div>
-
       )
    }
 }

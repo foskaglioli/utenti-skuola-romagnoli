@@ -16,11 +16,8 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-
-
 export default function Header(props) {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
       <AppBar position="static" style={{ textAlign: 'right', background: '#007dc3'}} >
