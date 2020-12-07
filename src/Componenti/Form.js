@@ -216,7 +216,17 @@ export default function Form() {
   }
 
   const beautifyName = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    //Vedo se è un nome/cognome fatto di più parole
+    let array_str = str.split(' ');
+    if(array_str.length > 1){
+      let arr_str_beauty = [];
+      array_str.forEach(function (str_tmp) {
+        arr_str_beauty.push(str_tmp.charAt(0).toUpperCase() + str_tmp.slice(1).toLowerCase())
+      });
+      return arr_str_beauty.join(' ');
+    }else{
+      return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    }
   }
 
   return (
