@@ -1,8 +1,10 @@
 import React from 'react';
 import { useForm  } from "react-hook-form";
 import './Form.css';
+import { useAlert } from 'react-alert';
 
 export default function Form() {
+  const alertBello = useAlert();
   const {register, handleSubmit } = useForm();
 
   const onSubmit = (data) => {
@@ -10,7 +12,19 @@ export default function Form() {
     if(esito_dati["ok"]){
       inserisciUtente(data);
     }else{
-      alert(esito_dati["errore"]);
+      let msg = esito_dati["errore"];
+      alertBello.error(<div style={{
+         color: '#007dc3',
+         backgroundColor: '#FFFFFF',
+         borderRadius: '6px 6px 6px 6px',
+         paddingTop: "5px",
+         paddingLeft: "7px",
+         paddingRight: "7px",
+         paddingBottom: "1px",
+         fontSize: '18px',
+         fontFamily: 'Verdana'
+        }
+       }>{msg}</div>);
     }
   }
 
