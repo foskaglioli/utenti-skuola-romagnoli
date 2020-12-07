@@ -1,14 +1,24 @@
 .add_utente{
   display: inline-block;
-  border:2px solid #0000;
+  border-right:2px solid #007dc3;
+  border-bottom:2px solid #007dc3;
   color: #FFFFFF;
   font-family: Verdana;
-  font-size: 12px;
-  padding: 4px 4px;
-  background-color: #94BC3E;
+  font-size: 13px;
+  padding: 5px 4px;
+  background-color: #007dc3;
 
 }
 
+
+.btn-primary{
+    background-color: #9DBF55 !important;
+    border: 0px !important;
+}
+
+.btn-primary:hover{
+    background-color: #7CA12C !important;
+}
 
 #div_form_utenti{
   width: 96.6%;

@@ -212,7 +212,7 @@ export default function Form() {
 
   return (
     <div id="div_form_utenti">
-      <span className="add_utente" >AGGIUNGI UTENTE</span>
+      <span className="add_utente" >Aggiungi utente</span>
       <form className="form-inline form_utenti" onSubmit={handleSubmit(onSubmit)}>
         <div className="form-group campi_form_utenti">
           <div className="input-group-prepend">
@@ -239,7 +239,7 @@ export default function Form() {
           <input required type="email" className="form-control testo_form" id="email" name="email" aria-describedby="emailHelp" aria-label="E-mail" ref={register} />
         </div>
         <div className="form-group campi_form_utenti">
-          <button  type="submit" className="btn btn-primary" >Salva</button>
+          <button  type="submit" className="btn btn-primary" >SALVA</button>
         </div>
       </form>
     </div>
