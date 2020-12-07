@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './Table.css';
 import { format } from "date-fns";
 import InlineConfirmButton from "react-inline-confirm";
-import TableScrollbar from 'react-table-scrollbar';
 
 export default class Table extends Component {
    constructor(props) {
@@ -107,18 +106,16 @@ export default class Table extends Component {
    }
    render() {
       return (
+
          <div id="container_table">
-          <TableScrollbar rows={13} >
             <table id='utenti'>
-               <thead>
-                  {this.creaHeader()}
-               </thead>
                <tbody>
+                  {this.creaHeader()}
                   {this.creaRighe()}
                </tbody>
             </table>
-          </TableScrollbar>
          </div>
+
       )
    }
 }

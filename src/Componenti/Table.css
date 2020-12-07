@@ -4,9 +4,9 @@
   font-family: "Helvetica", Arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  box-shadow: 5px 5px 5px #999;
   border: 2px solid #FEE300;
   padding: 8px;
-
 }
 
 .tabella {
@@ -57,10 +57,10 @@
 }
 
 #container_table{
-  margin: auto;
-  width: 90%;
-  box-shadow: 5px 5px 5px #999;
-
+  width: 100%;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 50px;
   /*
   position: absolute;
   top: 320px;*/
