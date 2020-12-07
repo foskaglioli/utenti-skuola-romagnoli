@@ -19,6 +19,15 @@ export default function Form() {
     esito["ok"]=true;
     esito["errore"]="";
 
+    //Controllo la lunghezza di tuti i parametri inseriti
+    for (const key of Object.keys(obj)) {
+      if(typeof(obj[key]) === 'string' && obj[key].length > 255){
+        esito["ok"]=false;
+        esito["errore"]="Tutti i campi devono avere la lunghezza massima di 255 caratteri";
+        return esito;
+      }
+    }
+
     //Controllo tutti i campi obbligatori, nel caso in cui il required non dovesse funzionare
     let controlla_campi_obbligatori= checkCampiObl(obj);
     if(!controlla_campi_obbligatori["ok"]){
