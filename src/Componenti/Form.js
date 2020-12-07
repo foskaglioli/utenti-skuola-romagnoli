@@ -169,7 +169,7 @@ export default function Form() {
       esito_coerenza_dt["ok"]=false;
       esito_coerenza_dt["errore"]="Il mesi inserito non è possibile";
       return esito_coerenza_dt;
-    }else if(anno.toString().length !== 4 || parseInt(anno) === 0){
+    }else if(anno.toString().length !== 4 || parseInt(anno) === 0 || parseInt(anno) < 1850 ){
       esito_coerenza_dt["ok"]=false;
       esito_coerenza_dt["errore"]="L'anno inserito non è possibile";
       return esito_coerenza_dt;
