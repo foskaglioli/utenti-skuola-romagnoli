@@ -15,7 +15,7 @@ export default function Form() {
       let msg = esito_dati["errore"];
       alertBello.error(<div style={{
          color: '#007dc3',
-         backgroundColor: '#FFFFFF',
+         backgroundColor: '#FEE300',
          borderRadius: '6px 6px 6px 6px',
          paddingTop: "5px",
          paddingLeft: "7px",

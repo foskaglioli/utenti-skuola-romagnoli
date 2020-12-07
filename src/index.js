@@ -10,7 +10,7 @@ import { Provider as AlertProvider } from 'react-alert';
 
 const options = {
   position: 'top right',
-  timeout: 2000,
+  timeout: 6000,
   offset: '30px',
   transition: 'fade'
 };

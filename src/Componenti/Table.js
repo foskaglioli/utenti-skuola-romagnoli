@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Table.css';
 import { format } from "date-fns";
+import InlineConfirmButton from "react-inline-confirm";
 
 export default class Table extends Component {
    constructor(props) {
@@ -65,9 +66,7 @@ export default class Table extends Component {
       );
    }
    gestisciRimozione(email_str){
-     if (window.confirm(`Conferma la cancellazione dell'utente con indirizzo email ${email_str} ?`)){
-        this.rimuoviUtenteByMail(email_str);
-      }
+    this.rimuoviUtenteByMail(email_str);
    }
    rimuoviUtenteByMail(email_str){
      //Rimuovo dallo storage l'utente con quella email
@@ -89,6 +88,7 @@ export default class Table extends Component {
    creaRighe() {
       return this.state.utenti.map((utente, index) => {
          const { cognome, nome, data_nascita, email } = utente;
+         const textValues = ["Rimuovi utente", "Confermare?", "Sto cancellando..."];
          let data_nascita_visualizzata = format(new Date(data_nascita),"dd/MM/yyyy");
          return (
             <tr key={email} className="righe_tabella">
@@ -96,9 +96,8 @@ export default class Table extends Component {
                <td className="tabella">{nome}</td>
                <td className="tabella">{data_nascita_visualizzata}</td>
                <td className="tabella">{email}</td>
-               <td className="tabella"><button type="button" class="pulsanteCancella" onClick={() => this.gestisciRimozione(email)}>
-                    Rimuovi utente
-                </button></td>
+               <td className="tabella"><InlineConfirmButton className="btn btn-default pulsanteCancella" textValues={textValues} showTimer onClick={() => this.gestisciRimozione(email)}>
+              	</InlineConfirmButton></td>
             </tr>
          )
       })
