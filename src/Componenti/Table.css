@@ -55,6 +55,11 @@
   color: white;
 }
 
+.iconaFreccia{
+  width:15px;
+  height:15px;
+}
+
 #container_table{
   width: 100%;
   padding-bottom: 20px;

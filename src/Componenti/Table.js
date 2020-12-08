@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Table.css';
 import { format } from "date-fns";
 import InlineConfirmButton from "react-inline-confirm";
+import upArrow from './icons/arrow-up.png';
+import downArrow from './icons/arrow-down.png';
+
 
 export default class Table extends Component {
    constructor(props) {
@@ -12,7 +15,7 @@ export default class Table extends Component {
          var item =JSON.parse(localStorage.getItem(key));
          array_utenti.push(item);
       });
-      this.state = { utenti: array_utenti, cs_cognome:'desc', cs_nome:'desc', cs_data_nascita:'desc', cs_email:'desc' };
+      this.state = { utenti: array_utenti, cs_cognome:'desc', cs_nome:'desc', cs_data_nascita:'desc', cs_email:'desc', ultimo_ord:[] };
       this.onSort = this.onSort.bind(this);
    }
    onSort(event, ordinaPer){
@@ -24,7 +27,7 @@ export default class Table extends Component {
           }else{
             data.sort((a,b) => b[ordinaPer].localeCompare(a[ordinaPer]));
           }
-          this.setState({utenti:data, cs_cognome: this.state.cs_cognome === 'desc' ? 'asc':'desc'});
+          this.setState({utenti:data, cs_cognome: this.state.cs_cognome === 'desc' ? 'asc':'desc', ultimo_ord:[ordinaPer,this.state.cs_cognome] });
           break;
         case "nome":
           if(this.state.cs_nome === 'asc'){
@@ -32,7 +35,7 @@ export default class Table extends Component {
           }else{
             data.sort((a,b) => b[ordinaPer].localeCompare(a[ordinaPer]));
           }
-          this.setState({utenti:data, cs_nome: this.state.cs_nome === 'desc' ? 'asc':'desc'});
+          this.setState({utenti:data, cs_nome: this.state.cs_nome === 'desc' ? 'asc':'desc', ultimo_ord:[ordinaPer,this.state.cs_nome] });
           break;
         case "data_nascita":
           if(this.state.cs_data_nascita === 'asc'){
@@ -40,7 +43,7 @@ export default class Table extends Component {
           }else{
             data.sort((a,b) => b[ordinaPer].localeCompare(a[ordinaPer]));
           }
-          this.setState({utenti:data, cs_data_nascita: this.state.cs_data_nascita === 'desc' ? 'asc':'desc'});
+          this.setState({utenti:data, cs_data_nascita: this.state.cs_data_nascita === 'desc' ? 'asc':'desc', ultimo_ord:[ordinaPer, this.state.cs_data_nascita] });
           break;
         case "email":
           if(this.state.cs_email === 'asc'){
@@ -48,19 +51,20 @@ export default class Table extends Component {
           }else{
             data.sort((a,b) => b[ordinaPer].localeCompare(a[ordinaPer]));
           }
-          this.setState({utenti:data, cs_email: this.state.cs_email === 'desc' ? 'asc':'desc'});
+          this.setState({utenti:data, cs_email: this.state.cs_email === 'desc' ? 'asc':'desc', ultimo_ord:[ordinaPer, this.state.cs_email] });
           break;
         default:
           break;
       }
    }
    creaHeader() {
+      const title_th = "Click per ordinare";
       return (
         <tr >
-           <th className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'cognome')}>Cognome</th>
-           <th className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'nome')}>Nome</th>
-           <th className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'data_nascita')}>Data di nascita</th>
-           <th className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'email')}>E-mail</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'cognome')}>Cognome {this.state.ultimo_ord.includes('cognome') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "} </th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'nome')}>Nome {this.state.ultimo_ord.includes('nome') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'data_nascita')}>Data di nascita {this.state.ultimo_ord.includes('data_nascita') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'email')}>E-mail {this.state.ultimo_ord.includes('email') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
            <th className="utenti_th">Totale utenti: {this.getNumeroUtenti()}</th>
         </tr>
       );
