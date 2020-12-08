@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/utenti-skuola-romagnoli/static/css/main.cc8c2740.chunk.css",
-    "main.js": "/utenti-skuola-romagnoli/static/js/main.7d3f0983.chunk.js",
-    "main.js.map": "/utenti-skuola-romagnoli/static/js/main.7d3f0983.chunk.js.map",
+    "main.js": "/utenti-skuola-romagnoli/static/js/main.d9003c3a.chunk.js",
+    "main.js.map": "/utenti-skuola-romagnoli/static/js/main.d9003c3a.chunk.js.map",
     "runtime-main.js": "/utenti-skuola-romagnoli/static/js/runtime-main.83894c6a.js",
     "runtime-main.js.map": "/utenti-skuola-romagnoli/static/js/runtime-main.83894c6a.js.map",
     "static/js/2.2805e2b3.chunk.js": "/utenti-skuola-romagnoli/static/js/2.2805e2b3.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.83894c6a.js",
     "static/js/2.2805e2b3.chunk.js",
     "static/css/main.cc8c2740.chunk.css",
-    "static/js/main.7d3f0983.chunk.js"
+    "static/js/main.d9003c3a.chunk.js"
   ]
 }
