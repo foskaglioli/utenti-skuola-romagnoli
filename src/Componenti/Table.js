@@ -4,6 +4,7 @@ import { format } from "date-fns";
 import InlineConfirmButton from "react-inline-confirm";
 import upArrow from './icons/arrow-up.png';
 import downArrow from './icons/arrow-down.png';
+import emptyArrow from './icons/empty.png';
 
 
 export default class Table extends Component {
@@ -59,12 +60,15 @@ export default class Table extends Component {
    }
    creaHeader() {
       const title_th = "Click per ordinare";
+      const alt_icone_ord = this.state.ultimo_ord.includes('desc') ? "Freccia verso il basso" : "Freccia verso l'alto";
+      const icona_ord = <img className="iconaFreccia" alt={alt_icone_ord} src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} />;
+      const icona_vuota = <img className="iconaFreccia" alt="Nessuna freccia di ordinamento" src={emptyArrow} />;
       return (
         <tr >
-           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'cognome')}>Cognome {this.state.ultimo_ord.includes('cognome') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "} </th>
-           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'nome')}>Nome {this.state.ultimo_ord.includes('nome') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
-           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'data_nascita')}>Data di nascita {this.state.ultimo_ord.includes('data_nascita') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
-           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'email')}>E-mail {this.state.ultimo_ord.includes('email') ? <img className="iconaFreccia" src={this.state.ultimo_ord.includes('desc') ? downArrow : upArrow} /> : " "}</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'cognome')}>Cognome {this.state.ultimo_ord.includes('cognome') ? icona_ord : icona_vuota} </th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'nome')}>Nome {this.state.ultimo_ord.includes('nome') ? icona_ord : icona_vuota}</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'data_nascita')}>Data di nascita {this.state.ultimo_ord.includes('data_nascita') ? icona_ord : icona_vuota}</th>
+           <th title={title_th} className="pointer utenti_th tabella" onClick={e => this.onSort(e, 'email')}>E-mail {this.state.ultimo_ord.includes('email') ? icona_ord : icona_vuota}</th>
            <th className="utenti_th">Totale utenti: {this.getNumeroUtenti()}</th>
         </tr>
       );
